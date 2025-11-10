@@ -3,20 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Семестровая работа</title>
-  <!-- Bootstrap CSS -->
+  <title>Артём Со | Портфолио</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .profile-img {
-      object-fit: cover;
-      width: 150px;
-      height: 150px;
-    }
+    body { background-color: #f8f9fa; }
+    .profile-img { width: 150px; height: 150px; object-fit: cover; }
+    .skill-badge { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
   </style>
 </head>
 <body>
@@ -26,11 +19,13 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col">
-          <h1 class="h3 mb-1">Семестровая работа</h1>
-          <p class="mb-0 opacity-75">Фронтенд и бэкенд разработка</p>
+          <h1 class="h3 mb-1">Артём Со</h1>
+          <p class="mb-0 opacity-75">Студент ЭФБО-09-24</p>
         </div>
         <div class="col-auto">
-          <span class="badge bg-light text-primary">ЭФБО-09-24</span>
+          <a href="resume.pdf" class="btn btn-sm btn-light">
+            <i class="bi bi-download me-1"></i> Скачать резюме
+          </a>
         </div>
       </div>
     </div>
@@ -50,18 +45,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/news.html">
-              <i class="bi bi-newspaper me-1"></i>Новости
+            <a class="nav-link" href="pages/projects.html">
+              <i class="bi bi-folder-fill me-1"></i>Проекты
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/practices.html">
-              <i class="bi bi-code-slash me-1"></i>Практики
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/goods.html">
-              <i class="bi bi-cart me-1"></i>Товары
+            <a class="nav-link" href="pages/diary.html">
+              <i class="bi bi-journal me-1"></i>Дневник
             </a>
           </li>
           <li class="nav-item">
@@ -77,7 +67,7 @@
   <!-- Main Content -->
   <main class="container my-4">
 
-    <!-- Profile Section -->
+    <!-- Профиль -->
     <section class="mb-5">
       <div class="card shadow-sm">
         <div class="card-body p-4">
@@ -86,16 +76,13 @@
               <img src="images/photo.png" alt="Фото автора" class="profile-img rounded-circle border border-primary">
             </div>
             <div class="col-md-9">
-              <h2 class="card-title h4 text-primary">Артём Со Алексеевич</h2>
-              <p class="card-text text-muted mb-2">
-                <i class="bi bi-bookmark-check-fill text-primary"></i> Студент группы ЭФБО-09-24
-              </p>
-              <p class="card-text">Люблю учиться. Не люблю ходить.</p>
+              <h2 class="card-title h4 text-primary">Привет! Я студент группы ЭФБО-09-24</h2>
+              <p class="card-text">Увлекаюсь веб-разработкой.</p>
               <div class="d-flex gap-2 flex-wrap">
-                <span class="badge bg-info">Плаваю</span>
-                <span class="badge bg-success">Пою</span>
-                <span class="badge bg-warning text-dark">Покер</span>
-                <span class="badge bg-danger">R6S</span>
+                <span class="badge skill-badge bg-info">HTML/CSS</span>
+                <span class="badge skill-badge bg-success">JavaScript</span>
+                <span class="badge skill-badge bg-warning">Bootstrap</span>
+                <span class="badge skill-badge bg-danger">React</span>
               </div>
             </div>
           </div>
@@ -103,27 +90,7 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-header bg-light">
-          <h3 class="card-title h5 mb-0">
-            <i class="bi bi-person-circle text-primary"></i> Обо мне
-          </h3>
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            Я студент, увлекаюсь программированием и играми. Участвовал в хакатоне по разработке настольных приложений — занял второе место.
-            Создал первое приложение на C++ и Qt для подсчёта слов.
-          </p>
-          <p class="card-text">
-            Также имею опыт работы официантом и продавцом, что помогло развить коммуникативные навыки.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
+    <!-- Навыки -->
     <section class="mb-5">
       <div class="card shadow-sm">
         <div class="card-header bg-light">
@@ -136,36 +103,36 @@
             <div class="col-md-6">
               <div class="mb-3">
                 <div class="d-flex justify-content-between mb-1">
-                  <span>Плавание</span> <span class="text-primary">100%</span>
+                  <span>HTML/CSS</span> <span class="text-primary">90%</span>
                 </div>
                 <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-primary" style="width: 100%"></div>
+                  <div class="progress-bar bg-primary" style="width: 90%"></div>
                 </div>
               </div>
               <div class="mb-3">
                 <div class="d-flex justify-content-between mb-1">
-                  <span>Покер</span> <span class="text-primary">80%</span>
+                  <span>JavaScript</span> <span class="text-primary">70%</span>
                 </div>
                 <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-success" style="width: 80%"></div>
+                  <div class="progress-bar bg-success" style="width: 70%"></div>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="mb-3">
                 <div class="d-flex justify-content-between mb-1">
-                  <span>R6S</span> <span class="text-primary">Gold II</span>
+                  <span>Bootstrap</span> <span class="text-primary">85%</span>
                 </div>
                 <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-info" style="width: 100%"></div>
+                  <div class="progress-bar bg-info" style="width: 85%"></div>
                 </div>
               </div>
               <div class="mb-3">
                 <div class="d-flex justify-content-between mb-1">
-                  <span>C++ / Qt</span> <span class="text-primary">70%</span>
+                  <span>React</span> <span class="text-primary">60%</span>
                 </div>
                 <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-warning" style="width: 70%"></div>
+                  <div class="progress-bar bg-warning" style="width: 60%"></div>
                 </div>
               </div>
             </div>
@@ -174,37 +141,51 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Проекты -->
     <section class="mb-5">
       <div class="card shadow-sm">
         <div class="card-header bg-light">
           <h3 class="card-title h5 mb-0">
-            <i class="bi bi-briefcase text-primary"></i> Опыт работы
+            <i class="bi bi-folder-fill text-primary"></i> Лучшие проекты
           </h3>
         </div>
         <div class="card-body">
-          <div class="d-flex mb-3">
-            <div class="flex-shrink-0 me-3">
-              <div class="bg-primary text-white rounded p-2">
-                <i class="bi bi-cup"></i>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="images/project1.jpg" alt="Личный сайт" class="card-img-top" style="height: 150px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Личный сайт</h5>
+                  <p class="card-text text-muted small">Моё портфолио на HTML и CSS</p>
+                  <div class="mt-auto">
+                    <a href="pages/projects.html#project1" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <h5 class="mb-0">Официант</h5>
-              <p class="text-muted small">Лето 2024, Кафе «Гурман», Москва</p>
-              <p>Обслуживание клиентов, работа в стрессовых условиях.</p>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="flex-shrink-0 me-3">
-              <div class="bg-success text-white rounded p-2">
-                <i class="bi bi-shop"></i>
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="images/project2.jpg" alt="Todo приложение" class="card-img-top" style="height: 150px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Todo приложение</h5>
+                  <p class="card-text text-muted small">Приложение для управления задачами</p>
+                  <div class="mt-auto">
+                    <a href="pages/projects.html#project2" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <h5 class="mb-0">Продавец</h5>
-              <p class="text-muted small">2024–2025</p>
-              <p>Работа с клиентами, расчёт, консультации.</p>
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="images/project3.jpg" alt="Интернет-магазин" class="card-img-top" style="height: 150px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Интернет-магазин</h5>
+                  <p class="card-text text-muted small">Прототип магазина на Bootstrap</p>
+                  <div class="mt-auto">
+                    <a href="pages/projects.html#project3" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -214,20 +195,12 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <p class="mb-0">&copy; 2025 Артём Со Алексеевич. Все права защищены.</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-        </div>
-      </div>
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 Артём Со. Все права защищены.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
