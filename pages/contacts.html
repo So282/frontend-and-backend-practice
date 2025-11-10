@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header">Контакты</div>
+
+  <div id="menu">
+    <ul>
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="practices.html">Практики</a></li>
+      <li><a href="goods.html">Товары</a></li>
+      <li><a href="contacts.html" class="active">Контакты</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <h1>Связаться со мной</h1>
+    <p class="intro">Готов к сотрудничеству и общению!</p>
+
+    <div class="contact-info">
+      <p>
+        📧 <strong>Email:</strong> 
+        <a href="mailto:artemso2005@mail.ru" class="contact-link">artemso2005@mail.ru</a>
+      </p>
+      <p>
+        📍 <strong>Адрес:</strong> г. Москва, ул. Комсомольская, д. 10
+      </p>
+      <p>
+        🌐 <strong>Соцсети:</strong> 
+        <a href="https://t.me/artemso" target="_blank" class="contact-link">Telegram</a>,
+        <a href="https://vk.com/artemso" target="_blank" class="contact-link">VK</a>
+      </p>
+    </div>
+
+    <button class="btn call-btn" onclick="alert('📞 Звонок не поддерживается в демо-версии 😊')">
+      Позвоните мне
+    </button>
+
+    <form class="feedback-form" onsubmit="alert('Спасибо за сообщение!'); return false;">
+      <h3>Написать мне</h3>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Email для ответа" required>
+      <textarea rows="5" placeholder="Ваше сообщение..." required></textarea>
+      <button type="submit" class="btn submit-btn">Отправить сообщение</button>
+    </form>
+  </div>
+
+  <div id="footer">© 2025 Артём Со. Все права защищены.</div>
+</body>
+</html>
