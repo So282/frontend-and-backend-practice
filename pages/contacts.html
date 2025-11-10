@@ -6,7 +6,6 @@
   <title>Контакты</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    /* Стили модального окна — как в методичке */
     dialog::backdrop {
       background: rgba(0, 0, 0, 0.6);
       animation: fadeIn 0.3s ease;
@@ -164,9 +163,9 @@
     </nav>
 
     <main class="content">
-      <h2 class="section-title">Связаться со мной</h2>
+      <section class="contacts-container">
+        <h2 class="section-title">Связаться со мной</h2>
 
-      <div class="contacts-container">
         <div class="contact-info">
           📧 <strong>Email:</strong> artemso2005@mail.ru
         </div>
@@ -179,11 +178,10 @@
           <a href="https://vk.com/artemso" target="_blank" style="color:#2c3e50; text-decoration: underline;">VK</a>
         </div>
 
-        <!-- Кнопка открытия модального окна -->
         <button class="contact-button" onclick="contactModal.showModal()">
           Написать мне
         </button>
-      </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -239,7 +237,7 @@
         form.reportValidity();
         return;
       }
-
+      
       const data = {
         name: form.name.value,
         phone: form.phone.value,
@@ -249,6 +247,7 @@
       };
 
       console.log('Отправлено:', data);
+
       alert('Спасибо! Ваше сообщение отправлено.');
       document.getElementById('contactModal').close();
       form.reset();

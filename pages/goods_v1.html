@@ -11,12 +11,6 @@
   <style>
     body {
       background-color: #f8f9fa;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .content-wrapper {
-      flex: 1;
     }
     .product-img {
       object-fit: cover;
@@ -73,7 +67,7 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="container my-4 content-wrapper">
+  <main class="container my-4">
     <div class="row g-4">
       <!-- Товар 1: Ноутбук -->
       <div class="col-md-6 col-lg-4">
@@ -140,10 +134,16 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+  <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
-      <p class="mb-0 text-center">&copy; 2025 Артём Со Алексеевич</p>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 Артём Со Алексеевич. Все права защищены.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+        </div>
+      </div>
     </div>
   </footer>
 
