@@ -5,6 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.6);
+      animation: fadeIn 0.3s ease;
+    }
+
+    dialog {
+      border: none;
+      border-radius: 12px;
+      padding: 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease;
+      max-width: 500px;
+      width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px 12px 0 0;
+      margin: 0;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .modal-content {
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e9ecef;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #f8f9fa;
+      color: #2c3e50;
+      border: 2px solid #e9ecef;
+    }
+
+    .btn-secondary:hover {
+      background: #e9ecef;
+    }
+
+    .required {
+      color: #e74c3c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      dialog {
+        margin: 1rem;
+        width: calc(100vw - 2rem);
+      }
+      .modal-actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-container">
@@ -23,25 +163,25 @@
     </nav>
 
     <main class="content">
-      <h2 class="section-title">Связаться со мной</h2>
+      <section class="contacts-container">
+        <h2 class="section-title">Связаться со мной</h2>
 
-      <div class="contacts-container">
         <div class="contact-info">
-          📧 <strong>Email:</strong> 
-          <a href="mailto:artemso2005@mail.ru" class="nav-link" style="color: #2c3e50; text-decoration: underline;">artemso2005@mail.ru</a>
+          📧 <strong>Email:</strong> artemso2005@mail.ru
         </div>
         <div class="contact-info">
           📍 <strong>Адрес:</strong> г. Москва, ул. Комсомольская, д. 10
         </div>
         <div class="contact-info">
-          🌐 <strong>Соцсети:</strong> 
-          <a href="https://t.me/artemso" target="_blank" class="nav-link" style="color: #2c3e50; text-decoration: underline;">Telegram</a>,
-          <a href="https://vk.com/artemso" target="_blank" class="nav-link" style="color: #2c3e50; text-decoration: underline;">VK</a>
+          🌐 <strong>Соцсети:</strong>
+          <a href="https://t.me/artemso" target="_blank" style="color:#2c3e50; text-decoration: underline;">Telegram</a>,
+          <a href="https://vk.com/artemso" target="_blank" style="color:#2c3e50; text-decoration: underline;">VK</a>
         </div>
 
-        <!-- Если нужно — кнопка по стилю методички -->
-        <a href="mailto:artemso2005@mail.ru" class="contact-button">Написать письмо</a>
-      </div>
+        <button class="contact-button" onclick="contactModal.showModal()">
+          Написать мне
+        </button>
+      </section>
     </main>
 
     <footer class="footer">
@@ -49,7 +189,74 @@
     </footer>
   </div>
 
-  <div id="footer">© 2025 Артём Со. Все права защищены.</div>
+  <!-- Модальное окно -->
+  <dialog id="contactModal">
+    <div class="modal-header">
+      <h2>Форма обратной связи</h2>
+    </div>
+    <div class="modal-content">
+      <form id="feedbackForm" method="dialog">
+        <div class="form-group">
+          <label for="name">Имя<span class="required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон<span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+        </div>
+        <div class="form-group">
+          <label for="email">Email<span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@example.com">
+        </div>
+        <div class="form-group">
+          <label for="category">Категория обращения<span class="required">*</span></label>
+          <select id="category" name="category" required>
+            <option value="">Выберите...</option>
+            <option value="study">Учеба</option>
+            <option value="project">Проект</option>
+            <option value="cooperation">Сотрудничество</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение<span class="required">*</span></label>
+          <textarea id="message" name="message" required placeholder="Расскажите подробнее..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-secondary">Отмена</button>
+          <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
+  <script>
+    function submitForm() {
+      const form = document.getElementById('feedbackForm');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      
+      const data = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        category: form.category.value,
+        message: form.message.value
+      };
+
+      console.log('Отправлено:', data);
+
+      alert('Спасибо! Ваше сообщение отправлено.');
+      document.getElementById('contactModal').close();
+      form.reset();
+    }
+
+    // Закрытие по клику на backdrop
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+      if (e.target === this) this.close();
+    });
+  </script>
 </body>
 </html>
