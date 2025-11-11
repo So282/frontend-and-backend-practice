@@ -76,14 +76,13 @@
       </div>
     </div>
 
-    
-  <!-- Карусель проектов -->
-    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+    <!-- Карусель проектов -->
+    <div id="projectsCarousel" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner">
-        <!-- Слайд 1 -->
+        <!-- Слайд 1 - Личный сайт -->
         <div class="carousel-item active">
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
               <div class="card h-100 shadow-sm">
                 <img src="../images/project1.jpg" alt="Личный сайт" class="project-img">
                 <div class="card-body d-flex flex-column">
@@ -101,7 +100,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+          </div>
+        </div>
+        <!-- Слайд 2 - Todo приложение -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
               <div class="card h-100 shadow-sm">
                 <img src="../images/project2.jpg" alt="Todo приложение" class="project-img">
                 <div class="card-body d-flex flex-column">
@@ -118,7 +122,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+          </div>
+        </div>
+        <!-- Слайд 3 - Интернет-магазин -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
               <div class="card h-100 shadow-sm">
                 <img src="../images/project3.jpg" alt="Интернет-магазин" class="project-img">
                 <div class="card-body d-flex flex-column">
@@ -130,65 +139,6 @@
                   </div>
                   <div class="mt-auto">
                     <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">
-                      Подробнее
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Слайд 2 -->
-        <div class="carousel-item">
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm">
-                <img src="../images/project1.jpg" alt="Дополнительный проект 1" class="project-img">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Дополнительный проект 1</h5>
-                  <p class="card-text text-muted small">Описание проекта 1</p>
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-warning">Vue</span>
-                    <span class="badge bg-info">CSS</span>
-                  </div>
-                  <div class="mt-auto">
-                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project4Modal">
-                      Подробнее
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm">
-                <img src="../images/project2.jpg" alt="Дополнительный проект 2" class="project-img">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Дополнительный проект 2</h5>
-                  <p class="card-text text-muted small">Описание проекта 2</p>
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-success">Node.js</span>
-                    <span class="badge bg-danger">MongoDB</span>
-                  </div>
-                  <div class="mt-auto">
-                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project5Modal">
-                      Подробнее
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm">
-                <img src="../images/project3.jpg" alt="Дополнительный проект 3" class="project-img">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Дополнительный проект 3</h5>
-                  <p class="card-text text-muted small">Описание проекта 3</p>
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-dark">Python</span>
-                    <span class="badge bg-secondary">Django</span>
-                  </div>
-                  <div class="mt-auto">
-                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project6Modal">
                       Подробнее
                     </button>
                   </div>
@@ -211,8 +161,10 @@
       <div class="carousel-indicators mt-3">
         <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
     </div>
+
   </main>
 
   <!-- Модальные окна -->
@@ -308,117 +260,6 @@
               <p>Прототип интернет-магазина с корзиной и фильтрацией товаров. Создан с использованием React и Bootstrap.</p>
               <h6>Технологии</h6>
               <p>React, Bootstrap, API</p>
-              <h6>Ссылки</h6>
-              <div class="d-flex gap-2">
-                <a href="#" class="btn btn-sm btn-outline-primary">
-                  <i class="bi bi-globe me-1"></i> Живая версия
-                </a>
-                <a href="#" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-github me-1"></i> Исходный код
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Проект 4 -->
-  <div class="modal fade" id="project4Modal" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title">Дополнительный проект 1</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="../images/project1.png" alt="Скриншот проекта" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-              <h6>Описание</h6>
-              <p>Описание дополнительного проекта 1.</p>
-              <h6>Технологии</h6>
-              <p>Vue, CSS</p>
-              <h6>Ссылки</h6>
-              <div class="d-flex gap-2">
-                <a href="#" class="btn btn-sm btn-outline-primary">
-                  <i class="bi bi-globe me-1"></i> Живая версия
-                </a>
-                <a href="#" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-github me-1"></i> Исходный код
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Проект 5 -->
-  <div class="modal fade" id="project5Modal" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title">Дополнительный проект 2</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="../images/project2.png" alt="Скриншот проекта" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-              <h6>Описание</h6>
-              <p>Описание дополнительного проекта 2.</p>
-              <h6>Технологии</h6>
-              <p>Node.js, MongoDB</p>
-              <h6>Ссылки</h6>
-              <div class="d-flex gap-2">
-                <a href="#" class="btn btn-sm btn-outline-primary">
-                  <i class="bi bi-globe me-1"></i> Живая версия
-                </a>
-                <a href="#" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-github me-1"></i> Исходный код
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Проект 6 -->
-  <div class="modal fade" id="project6Modal" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title">Дополнительный проект 3</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="../images/project3.png" alt="Скриншот проекта" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-              <h6>Описание</h6>
-              <p>Описание дополнительного проекта 3.</p>
-              <h6>Технологии</h6>
-              <p>Python, Django</p>
               <h6>Ссылки</h6>
               <div class="d-flex gap-2">
                 <a href="#" class="btn btn-sm btn-outline-primary">
