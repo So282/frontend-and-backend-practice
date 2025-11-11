@@ -11,12 +11,14 @@
       background-color: #f8f9fa; 
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Высота страницы минимум 100% высоты вьюпорта */
+      min-height: 100vh;
     }
     main {
-      flex: 1; /* Основной контент растягивается */
+      flex: 1;
     }
     .project-img { width: 100%; height: 200px; object-fit: cover; }
+    .carousel-item { transition: transform 0.5s ease-in-out; }
+    .carousel-inner { border-radius: 10px; }
   </style>
 </head>
 <body>
@@ -74,65 +76,140 @@
       </div>
     </div>
 
-    <!-- Проекты -->
-    <div class="row g-4">
-      <!-- Проект 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="../images/project1.jpg" alt="Личный сайт" class="project-img">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Личный сайт</h5>
-            <p class="card-text text-muted small">Сайт-портфолио на HTML и CSS</p>
-            <div class="d-flex gap-2 mb-3">
-              <span class="badge bg-primary">HTML</span>
-              <span class="badge bg-primary">CSS</span>
+    <!-- Карусель проектов -->
+    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <!-- Слайд 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project1.jpg" alt="Личный сайт" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Личный сайт</h5>
+                  <p class="card-text text-muted small">Сайт-портфолио на HTML и CSS</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-primary">CSS</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="mt-auto">
-              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">
-                Подробнее
-              </button>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project2.jpg" alt="Todo приложение" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Todo приложение</h5>
+                  <p class="card-text text-muted small">Приложение для управления задачами</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-success">JavaScript</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project3.jpg" alt="Интернет-магазин" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Интернет-магазин</h5>
+                  <p class="card-text text-muted small">Прототип интернет-магазина</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-info">Bootstrap</span>
+                    <span class="badge bg-info">React</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Слайд 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project1.jpg" alt="Дополнительный проект 1" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Дополнительный проект 1</h5>
+                  <p class="card-text text-muted small">Описание проекта 1</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-warning">Vue</span>
+                    <span class="badge bg-info">CSS</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project4Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project2.jpg" alt="Дополнительный проект 2" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Дополнительный проект 2</h5>
+                  <p class="card-text text-muted small">Описание проекта 2</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-success">Node.js</span>
+                    <span class="badge bg-danger">MongoDB</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project5Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img src="../images/project3.jpg" alt="Дополнительный проект 3" class="project-img">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Дополнительный проект 3</h5>
+                  <p class="card-text text-muted small">Описание проекта 3</p>
+                  <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-dark">Python</span>
+                    <span class="badge bg-secondary">Django</span>
+                  </div>
+                  <div class="mt-auto">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project6Modal">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Проект 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="../images/project2.jpg" alt="Todo приложение" class="project-img">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Todo приложение</h5>
-            <p class="card-text text-muted small">Приложение для управления задачами</p>
-            <div class="d-flex gap-2 mb-3">
-              <span class="badge bg-success">JavaScript</span>
-            </div>
-            <div class="mt-auto">
-              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">
-                Подробнее
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Проект 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="../images/project3.jpg" alt="Интернет-магазин" class="project-img">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Интернет-магазин</h5>
-            <p class="card-text text-muted small">Прототип интернет-магазина</p>
-            <div class="d-flex gap-2 mb-3">
-              <span class="badge bg-info">Bootstrap</span>
-              <span class="badge bg-info">React</span>
-            </div>
-            <div class="mt-auto">
-              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">
-                Подробнее
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- Управление каруселью -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
+      <!-- Индикаторы -->
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
     </div>
 
@@ -250,7 +327,118 @@
     </div>
   </div>
 
-   <!-- Footer -->
+  <!-- Проект 4 -->
+  <div class="modal fade" id="project4Modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Дополнительный проект 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../images/project1.png" alt="Скриншот проекта" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h6>Описание</h6>
+              <p>Описание дополнительного проекта 1.</p>
+              <h6>Технологии</h6>
+              <p>Vue, CSS</p>
+              <h6>Ссылки</h6>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-outline-primary">
+                  <i class="bi bi-globe me-1"></i> Живая версия
+                </a>
+                <a href="#" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-github me-1"></i> Исходный код
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Проект 5 -->
+  <div class="modal fade" id="project5Modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Дополнительный проект 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../images/project2.png" alt="Скриншот проекта" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h6>Описание</h6>
+              <p>Описание дополнительного проекта 2.</p>
+              <h6>Технологии</h6>
+              <p>Node.js, MongoDB</p>
+              <h6>Ссылки</h6>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-outline-primary">
+                  <i class="bi bi-globe me-1"></i> Живая версия
+                </a>
+                <a href="#" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-github me-1"></i> Исходный код
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Проект 6 -->
+  <div class="modal fade" id="project6Modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Дополнительный проект 3</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../images/project3.png" alt="Скриншот проекта" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h6>Описание</h6>
+              <p>Описание дополнительного проекта 3.</p>
+              <h6>Технологии</h6>
+              <p>Python, Django</p>
+              <h6>Ссылки</h6>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-outline-primary">
+                  <i class="bi bi-globe me-1"></i> Живая версия
+                </a>
+                <a href="#" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-github me-1"></i> Исходный код
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="bg-dark text-white py-4">
     <div class="container text-center">
       <p class="mb-0">&copy; 2025 Артём Со. Все права защищены.</p>
