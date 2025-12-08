@@ -2,205 +2,315 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Артём Со | Портфолио</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <style>
     body { background-color: #f8f9fa; }
-    .profile-img { width: 150px; height: 150px; object-fit: cover; }
-    .skill-badge { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .skill-badge {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    /* Доступность */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      z-index: 999;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 10px;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="bg-primary text-white py-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col">
-          <h1 class="h3 mb-1">Артём Со</h1>
-          <p class="mb-0 opacity-75">Студент ЭФБО-09-24</p>
-        </div>
-        <div class="col-auto">
-          <a href="resume.pdf" class="btn btn-sm btn-light">
-            <i class="bi bi-download me-1"></i> Скачать резюме
+<!-- Skip link -->
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<!-- Header -->
+<header class="bg-primary text-white py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1 class="h3 mb-1">Артём Со</h1>
+        <p class="mb-0 opacity-75">Студент ЭФБО-09-24</p>
+      </div>
+      <div class="col-auto">
+        <a href="resume.pdf" class="btn btn-sm btn-light" aria-label="Скачать резюме">
+          <i class="bi bi-download me-1" aria-hidden="true"></i> Скачать резюме
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-label="Открыть меню">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">
+            <i class="bi bi-house me-1" aria-hidden="true"></i>Главная
           </a>
-        </div>
-      </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="pages/projects.html">
+            <i class="bi bi-folder-fill me-1" aria-hidden="true"></i>Проекты
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="pages/diary.html">
+            <i class="bi bi-journal me-1" aria-hidden="true"></i>Дневник
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="pages/contacts.html">
+            <i class="bi bi-telephone me-1" aria-hidden="true"></i>Контакты
+          </a>
+        </li>
+      </ul>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">
-              <i class="bi bi-house me-1"></i>Главная
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/projects.html">
-              <i class="bi bi-folder-fill me-1"></i>Проекты
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/diary.html">
-              <i class="bi bi-journal me-1"></i>Дневник
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/contacts.html">
-              <i class="bi bi-telephone me-1"></i>Контакты
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!-- Main Content -->
+<main id="main" class="container my-4">
 
-  <!-- Main Content -->
-  <main class="container my-4">
+  <!-- Профиль -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center mb-3 mb-md-0">
 
-    <!-- Профиль -->
-    <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-body p-4">
-          <div class="row align-items-center">
-            <div class="col-md-3 text-center mb-3 mb-md-0">
-              <img src="images/photo.png" alt="Фото автора" class="profile-img rounded-circle border border-primary">
+            <!-- Адаптивное изображение профиля -->
+            <picture>
+              <source type="image/webp"
+                srcset="
+                  images/photo-300.webp 300w,
+                  images/photo-600.webp 600w,
+                  images/photo-1200.webp 1200w">
+              <img src="images/photo-600.webp" width="150" height="150"
+                   alt="Фото автора"
+                   class="profile-img rounded-circle border border-primary">
+            </picture>
+
+          </div>
+
+          <div class="col-md-9">
+            <h2 class="card-title h4 text-primary">Привет! Я студент группы ЭФБО-09-24</h2>
+            <p class="card-text">Увлекаюсь веб-разработкой.</p>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <span class="badge skill-badge bg-info">HTML/CSS</span>
+              <span class="badge skill-badge bg-success">JavaScript</span>
+              <span class="badge skill-badge bg-warning">Bootstrap</span>
+              <span class="badge skill-badge bg-danger">React</span>
             </div>
-            <div class="col-md-9">
-              <h2 class="card-title h4 text-primary">Привет! Я студент группы ЭФБО-09-24</h2>
-              <p class="card-text">Увлекаюсь веб-разработкой.</p>
-              <div class="d-flex gap-2 flex-wrap">
-                <span class="badge skill-badge bg-info">HTML/CSS</span>
-                <span class="badge skill-badge bg-success">JavaScript</span>
-                <span class="badge skill-badge bg-warning">Bootstrap</span>
-                <span class="badge skill-badge bg-danger">React</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Навыки -->
-    <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-header bg-light">
-          <h3 class="card-title h5 mb-0">
-            <i class="bi bi-tools text-primary"></i> Мои навыки
-          </h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>HTML/CSS</span> <span class="text-primary">90%</span>
-                </div>
-                <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-primary" style="width: 90%"></div>
-                </div>
+  <!-- Навыки -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-light">
+        <h3 class="card-title h5 mb-0">
+          <i class="bi bi-tools text-primary" aria-hidden="true"></i> Мои навыки
+        </h3>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>HTML/CSS</span> <span class="text-primary">90%</span>
               </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>JavaScript</span> <span class="text-primary">70%</span>
-                </div>
-                <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-success" style="width: 70%"></div>
-                </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-primary" style="width: 90%"></div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>Bootstrap</span> <span class="text-primary">85%</span>
-                </div>
-                <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-info" style="width: 85%"></div>
-                </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>JavaScript</span> <span class="text-primary">70%</span>
               </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>React</span> <span class="text-primary">60%</span>
-                </div>
-                <div class="progress" style="height: 8px;">
-                  <div class="progress-bar bg-warning" style="width: 60%"></div>
-                </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 70%"></div>
               </div>
             </div>
           </div>
+
+          <div class="col-md-6">
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>Bootstrap</span> <span class="text-primary">85%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-info" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>React</span> <span class="text-primary">60%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-warning" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Проекты -->
-    <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-header bg-light">
-          <h3 class="card-title h5 mb-0">
-            <i class="bi bi-folder-fill text-primary"></i> Лучшие проекты
-          </h3>
-        </div>
-        <div class="card-body">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-                <img src="images/project1.jpg" alt="Личный сайт" class="card-img-top" style="height: 150px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Личный сайт</h5>
-                  <p class="card-text text-muted small">Моё портфолио на HTML и CSS</p>
-                  <div class="mt-auto">
-                    <a href="pages/projects.html#project1" class="btn btn-sm btn-outline-primary">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-                <img src="images/project2.jpg" alt="Todo приложение" class="card-img-top" style="height: 150px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Todo приложение</h5>
-                  <p class="card-text text-muted small">Приложение для управления задачами</p>
-                  <div class="mt-auto">
-                    <a href="pages/projects.html#project2" class="btn btn-sm btn-outline-primary">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-                <img src="images/project3.jpg" alt="Интернет-магазин" class="card-img-top" style="height: 150px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">Интернет-магазин</h5>
-                  <p class="card-text text-muted small">Прототип магазина на Bootstrap</p>
-                  <div class="mt-auto">
-                    <a href="pages/projects.html#project3" class="btn btn-sm btn-outline-primary">Подробнее</a>
-                  </div>
+  <!-- Проекты -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-light">
+        <h3 class="card-title h5 mb-0">
+          <i class="bi bi-folder-fill text-primary" aria-hidden="true"></i> Лучшие проекты
+        </h3>
+      </div>
+
+      <div class="card-body">
+        <div class="row g-4">
+
+          <!-- Проект 1 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+
+              <picture>
+                <source type="image/webp"
+                  srcset="
+                    images/project1-300.webp 300w,
+                    images/project1-600.webp 600w,
+                    images/project1-1200.webp 1200w">
+                <img src="images/project1-600.webp"
+                     class="card-img-top"
+                     alt="Личный сайт"
+                     loading="lazy"
+                     style="object-fit: cover;">
+              </picture>
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Личный сайт</h5>
+                <p class="card-text text-muted small">Моё портфолио на HTML и CSS</p>
+                <div class="mt-auto">
+                  <a href="pages/projects.html#project1" class="btn btn-sm btn-outline-primary">Подробнее</a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Проект 2 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+
+              <picture>
+                <source type="image/webp"
+                  srcset="
+                    images/project2-300.webp 300w,
+                    images/project2-600.webp 600w,
+                    images/project2-1200.webp 1200w">
+                <img src="images/project2-600.webp"
+                     class="card-img-top"
+                     alt="Todo приложение"
+                     loading="lazy"
+                     style="object-fit: cover;">
+              </picture>
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Todo приложение</h5>
+                <p class="card-text text-muted small">Приложение для управления задачами</p>
+                <div class="mt-auto">
+                  <a href="pages/projects.html#project2" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Проект 3 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+
+              <picture>
+                <source type="image/webp"
+                  srcset="
+                    images/project3-300.webp 300w,
+                    images/project3-600.webp 600w,
+                    images/project3-1200.webp 1200w">
+                <img src="images/project3-600.webp"
+                     class="card-img-top"
+                     alt="Интернет-магазин"
+                     loading="lazy"
+                     style="object-fit: cover;">
+              </picture>
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Интернет-магазин</h5>
+                <p class="card-text text-muted small">Прототип магазина на Bootstrap</p>
+                <div class="mt-auto">
+                  <a href="pages/projects.html#project3" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-auto">
-    <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Артём Со. Все права защищены.</p>
     </div>
-  </footer>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-auto">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2025 Артём Со. Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

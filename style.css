@@ -1,345 +1,214 @@
-/*===== БАЗОВЫЕ СТИЛИ =====*/
+/* ================================================================
+   ГЛОБАЛЬНЫЙ ФОН + БАЗОВЫЕ СТИЛИ
+================================================================ */
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  /* Улучшенный фон — мягкий, не отвлекающий */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    /* ТВОЙ ГЛАВНЫЙ ФИОЛЕТОВЫЙ ГРАДИЕНТ */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    min-height: 100vh;
+
+    /* Чтобы контент выглядел лучше */
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-/*===== КОНТЕЙНЕР СТРАНИЦЫ =====*/
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  min-height: 100vh;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  display: grid;
-  grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
-  grid-template-rows: auto auto 1fr auto;
+/* Центровка контейнера Bootstrap */
+.container {
+    position: relative;
+    z-index: 2;
 }
 
-/*===== ШАПКА =====*/
-.header {
-  grid-area: header;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  text-align: center;
-  padding: 30px;
-  font-size: 28px;
-  font-weight: 300;
-  letter-spacing: 2px;
+/* ================================================================
+   КАРТОЧКИ (ОБЩЕЕ ДЛЯ index/projects/diary/contacts)
+================================================================ */
+
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transition: 0.25s ease;
+    background: #ffffff;
 }
 
-/*===== НАВИГАЦИЯ =====*/
-.nav {
-  grid-area: nav;
-  background: #2c3e50;
-  padding: 20px 0;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
-.nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
+/* Текст карточек */
+.card-title {
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-.nav-item {
-  margin: 0;
+/* ================================================================
+   ИЗОБРАЖЕНИЯ (picture + srcset)
+================================================================ */
+
+.card-img-top,
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  display: block;
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
-.nav-link:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+/* ================================================================
+   НАВЫКИ (badge)
+================================================================ */
+
+.skill-badge {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 14px;
+    font-weight: 600;
 }
 
-/*===== ОСНОВНОЙ КОНТЕНТ =====*/
-main.content {
-  grid-area: main;
-  padding: 40px;
-  max-width: 900px;
-  margin: 0 auto;
+/* Индивидуальные градиенты */
+.skill-badge.bg-info {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
 }
 
-/*===== ПРОФИЛЬ =====*/
-.profile-header {
-  text-align: center;
-  margin-bottom: 40px;
+.skill-badge.bg-success {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%) !important;
 }
 
-.profile-title {
-  font-size: 32px;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-weight: 300;
+.skill-badge.bg-warning {
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
 }
 
-.profile-photo {
-  width: 220px;
-  height: 280px;
-  border-radius: 15px;
-  object-fit: cover;
-  margin: 20px auto;
-  border: 4px solid #667eea;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-  display: block;
+.skill-badge.bg-danger {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
 }
 
-.profile-name {
-  font-size: 24px;
-  color: #2c3e50;
-  margin: 10px 0;
-  font-weight: 500;
+/* ================================================================
+   ПРОГРЕСС-БАРЫ
+================================================================ */
+
+.progress {
+    height: 8px;
+    border-radius: 20px;
 }
 
-.profile-group {
-  font-size: 18px;
-  color: #7f8c8d;
-  margin: 5px 0;
+.progress-bar {
+    border-radius: 20px;
 }
 
-.about-me {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  padding: 25px;
-  border-radius: 15px;
-  margin: 30px 0;
-  border-left: 5px solid #667eea;
-  font-size: 16px;
-  line-height: 1.8;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* ================================================================
+   ФОРМА (contacts.html)
+================================================================ */
+
+.contact-form .form-control {
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 16px;
 }
 
-/*===== НАВЫКИ =====*/
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
+.contact-form .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 18px;
+    font-size: 17px;
+    border-radius: 12px;
+    transition: 0.25s ease;
 }
 
-.skill-tag {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-  transition: all 0.3s ease;
-  text-align: center;
+.contact-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(102, 126, 234, 0.45);
 }
 
-.skill-tag:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+/* Подсветка валидности */
+.was-validated .form-control:valid {
+    border-color: #28a745 !important;
 }
 
-/*===== ОПЫТ РАБОТЫ =====*/
-.experience-section {
-  margin-top: 50px;
+.was-validated .form-control:invalid {
+    border-color: #dc3545 !important;
 }
 
-.section-title {
-  font-size: 28px;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 300;
+/* ================================================================
+   СПИСКИ В ДНЕВНИКЕ (diary.html)
+================================================================ */
+
+.entry-date {
+    font-weight: 600;
+    color: #6c757d;
 }
 
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+.status-done {
+    color: #27ae60;
+    font-weight: 600;
 }
 
-.experience-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #667eea;
-  transition: transform 0.3s ease;
+.status-in-progress {
+    color: #f1c40f;
+    font-weight: 600;
 }
 
-.experience-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+/* ================================================================
+   ХЕДЕР + ФУТЕР
+================================================================ */
+
+header.bg-primary {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
 }
 
-.experience-title {
-  font-size: 20px;
-  color: #2c3e50;
-  margin: 0 0 10px;
-  font-weight: 600;
+footer.bg-dark {
+    background: #2c3e50 !important;
 }
 
-.experience-desc {
-  color: #7f8c8d;
-  line-height: 1.6;
-  margin: 0;
+footer {
+    margin-top: auto;
 }
 
-/*===== НОВОСТИ =====*/
-.news-container {
-  display: grid;
-  gap: 25px;
+/* ================================================================
+   КНОПКИ
+================================================================ */
+
+.btn-outline-primary {
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-weight: 600;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-.news-card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #667eea;
+.btn-outline-primary:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.7);
 }
 
-.news-title {
-  font-size: 24px;
-  color: #2c3e50;
-  margin: 0 0 10px;
-  font-weight: 600;
-}
+/* ================================================================
+   АДАПТИВНОСТЬ
+================================================================ */
 
-.news-meta {
-  color: #95a5a6;
-  font-size: 14px;
-  margin: 0 0 15px;
-}
-
-.news-text {
-  color: #34495e;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/*===== ТОВАРЫ (добавлено!) =====*/
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.product-card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.product-image {
-  width: 200px;
-  height: 250px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid #f8f9fa;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.product-name {
-  font-size: 18px;
-  color: #2c3e50;
-  margin: 10px 0;
-  font-weight: 600;
-}
-
-.product-price {
-  font-size: 20px;
-  color: #e74c3c;
-  font-weight: 700;
-  margin: 5px 0;
-}
-
-/*===== КОНТАКТЫ (добавлено!) =====*/
-.contacts-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.contact-info {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 15px;
-  font-size: 18px;
-  color: #2c3e50;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.contact-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.contact-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
-}
-
-/*===== ФУТЕР =====*/
-.footer {
-  grid-area: footer;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-/*===== АДАПТИВНОСТЬ =====*/
 @media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .skills-grid,
-  .experience-grid,
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-  main.content {
-    padding: 20px;
-  }
-  .profile-photo {
-    width: 180px;
-    height: 230px;
-  }
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .card:hover {
+        transform: none;
+    }
 }
